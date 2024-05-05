@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="374.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.eapp.DinosaurGameController">
+   <children>
+      <Canvas fx:id="canvas" height="262.0" layoutX="10.0" layoutY="105.0" width="570.0" />
+      <Label fx:id="question" layoutX="37.0" layoutY="22.0" text="Label" />
+      <Button fx:id="answerA" layoutX="134.0" layoutY="40.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="answerB" layoutX="136.0" layoutY="73.0" mnemonicParsing="false" text="Button" />
+      <Label fx:id="choiceA" layoutX="37.0" layoutY="44.0" text="Label" />
+      <Label fx:id="choiceB" layoutX="37.0" layoutY="68.0" text="Label" />
+      <Label fx:id="resultPane" layoutX="134.0" layoutY="131.0" prefHeight="170.0" prefWidth="309.0" text="Label" />
+      <Label fx:id="scorePoints" layoutX="481.0" layoutY="22.0" prefHeight="57.0" prefWidth="109.0" text="Label" />
+      <Label fx:id="clock" layoutX="481.0" layoutY="71.0" text="Label" />
+   </children>
+</AnchorPane>
