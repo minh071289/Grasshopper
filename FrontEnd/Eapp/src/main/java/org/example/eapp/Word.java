@@ -2,11 +2,11 @@ package org.example.eapp;
 
 public class Word {
     private String word;
-    private String mean;
+    private String def;
 
-    public Word(String word, String mean) {
+    public Word(String word, String def) {
         this.word = word;
-        this.mean = mean;
+        this.def = def;
     }
 
     public Word() {
@@ -20,11 +20,12 @@ public class Word {
         this.word = word;
     }
 
-    public String getMean() {
-        return mean;
+    public String getDef() {
+        return def;
     }
 
-    public void setMean(String mean) {
-        this.mean = mean;
+    public void setDef(String def) {
+        this.def = def;
     }
 }
+
