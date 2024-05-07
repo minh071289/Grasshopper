@@ -57,6 +57,14 @@ public class DinosaurGameController implements Initializable {
     private Image cactus2Img;
     private Image cactus3Img;
     @FXML
+    Label readySet;
+    @FXML
+    Label instruction;
+    @FXML
+    Label jiaYou;
+    @FXML
+    Label finalCongrats;
+    @FXML
     Label question;
     @FXML
     Label choiceA;
@@ -66,8 +74,6 @@ public class DinosaurGameController implements Initializable {
     Button answerA;
     @FXML
     Button answerB;
-    @FXML
-    Label resultPane;
     @FXML
     Label scorePoints;
     @FXML
@@ -85,13 +91,25 @@ public class DinosaurGameController implements Initializable {
         canvas.setHeight(boardHeight);
 
         try {
-            dinoImg = new Image(new FileInputStream("C:\\Users\\HP\\Documents\\code\\tepperapp\\Grasshopper-Li - Copy\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\dino.png"));
-            cactus1Img = new Image(new FileInputStream("C:\\Users\\HP\\Documents\\code\\tepperapp\\Grasshopper-Li - Copy\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\cactus1.png"));
-            cactus2Img = new Image(new FileInputStream("C:\\Users\\HP\\Documents\\code\\tepperapp\\Grasshopper-Li - Copy\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\cactus2.png"));
-            cactus3Img = new Image(new FileInputStream("C:\\Users\\HP\\Documents\\code\\tepperapp\\Grasshopper-Li - Copy\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\cactus3.png"));
+            dinoImg = new Image(new FileInputStream("D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
+            cactus1Img = new Image(new FileInputStream("D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\cactus1.png"));
+            cactus2Img = new Image(new FileInputStream("D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\cactus2.png"));
+            cactus3Img = new Image(new FileInputStream("D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\cactus3.png"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+
+        readySet.setText("3");
+        Timeline timer = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+            int currentTime = Integer.parseInt(readySet.getText());
+            if(currentTime>0) {
+                currentTime--;
+                readySet.setText(String.valueOf(currentTime));
+            }
+        }));
+        timer.setCycleCount(3);
+        timer.play();
+        timer.setOnFinished(event -> readySet.setVisible(false));
 
         // Start game loop
         new AnimationTimer() {
@@ -114,10 +132,12 @@ public class DinosaurGameController implements Initializable {
         canvas.requestFocus();
 
         setQsBtnVisible(false);
-        resultPane.setVisible(false);
-
-        answerA.setText("A");
-        answerB.setText("B");
+        finalCongrats.setVisible(false);
+        jiaYou.setText("INSTRUCTION");
+        instruction.setText("Press  RIGHT  once : Activate  Hopper\n" +
+                "Press  SPACE : Jump");
+        answerA.setStyle("-fx-background-color: null;");
+        answerB.setStyle("-fx-background-color: null;");
     }
 
     private void update() {
@@ -126,18 +146,23 @@ public class DinosaurGameController implements Initializable {
             gameOver = true;
         }
         if (gameOver) {
+            instruction.setVisible(false);
             scorePoints.setVisible(false);
-            resultPane.setVisible(true);
-            resultPane.setStyle("-fx-background-color: white; -fx-alignment:center;");
-            String congrats = "You have scored " + score + " points!\n";
+            setQsBtnVisible(false);
+            jiaYou.setText("SCORE:  " + score);
+            jiaYou.setStyle("-fx-text-fill: ffd200;");
+            String congrats;
             if(score>=90) {
-                congrats += "Tepper is proud of you";
+                congrats = "Tepper  is  proud  of  you";
             } else if(score>=50) {
-                congrats+= "Tepper is a little bit disappointed";
+                congrats = "Hoo-rayyy";
+            } else if(score>=20) {
+                congrats = "You  are  almost  there!";
             } else {
-                congrats+= "You are a disgrace!";
+                congrats = "You  can  always  try  again !";
             }
-            resultPane.setText(congrats);
+            finalCongrats.setVisible(true);
+            finalCongrats.setText(congrats);
             return;
         }
         context.clearRect(0, 0, boardWidth, boardHeight);
@@ -179,7 +204,7 @@ public class DinosaurGameController implements Initializable {
         }
 
         cactusList.add(new Cactus(cactusX, cactusY, cactusWidth, cactusHeight, cactusImg));
-        if (cactusList.size() >= 5)
+        if (cactusList.size() >= 10)
             cactusList.clear();
     }
 
@@ -187,10 +212,12 @@ public class DinosaurGameController implements Initializable {
         if (gameOver) {
             return;
         }
-        if ((keyCode == KeyCode.SPACE || keyCode == KeyCode.UP) && dinoY == boardHeight - dinoHeight) {
+        if ((keyCode == KeyCode.SPACE) && dinoY == boardHeight - dinoHeight) {
             // Jump
             velocityY = -10;
             cactusJumps++;
+            instruction.setVisible(false);
+            jiaYou.setText("Keep Going\n"+"\uD83E\uDD20");
         }
 
         if (cactusJumps % 4 == 0) {
@@ -207,15 +234,15 @@ public class DinosaurGameController implements Initializable {
             if(currentTime>0) {
                 currentTime--;
                 clock.setText(String.valueOf(currentTime));
-            } else {
-                System.out.println("Time's up! You lose!");
-                gameOver = true;
-                update();
             }
         }));
         questionTimer.setCycleCount(10);
         questionTimer.play();
 
+        questionTimer.setOnFinished(event -> {
+            gameOver = true;
+            update();
+        });
         int randomIndex = (int) (Math.random() * dinosaurQs.size());
         Question randomQuestion = dinosaurQs.get(randomIndex);
 
@@ -229,10 +256,10 @@ public class DinosaurGameController implements Initializable {
         answerB.setOnMouseClicked(event -> handleAnswer(randomQuestion, "B"));
     }
 
-    private void handleAnswer(Question question, String chosenAns) {
+    private void handleAnswer(Question q, String chosenAns) {
         questionTimer.stop();
         gamePaused = false;
-        if(question.getAnswer().equals(chosenAns)) {
+        if(q.getAnswer().equals(chosenAns)) {
             gameOver = false;
             System.out.println("Got it right");
             score += 20;
@@ -258,6 +285,7 @@ public class DinosaurGameController implements Initializable {
         answerB.setVisible(check);
         choiceA.setVisible(check);
         choiceB.setVisible(check);
+        jiaYou.setVisible(!check);
     }
 
 }

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -17,9 +18,9 @@ public class GameCentralController implements Initializable {
     @FXML
     private Button game2;
     @FXML
-    public Button to;
-    @FXML
     private AnchorPane anchorPane;
+    @FXML
+    private ImageView pickAdventureLogo;
     @FXML
     private void setNode(Node node) {
         anchorPane.getChildren().clear();
@@ -30,21 +31,10 @@ public class GameCentralController implements Initializable {
         setNode(component);
     }
 
-    @FXML
-    void onToHomeClick() {
-        System.out.println("cit");
-        game1.setVisible(true);
-        game2.setVisible(true);
-        anchorPane.setPrefHeight(1);
-        anchorPane.setPrefWidth(1);
-        anchorPane.setVisible(false);
-    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        to.setStyle("-fx-background-color:null;");
         game1.setStyle("-fx-background-color:null;");
         game2.setStyle("-fx-background-color:null;");
-        to.setVisible(false);
 
         game1.setOnMouseClicked(e -> {
             anchorPane.setPrefWidth(570);
@@ -52,6 +42,7 @@ public class GameCentralController implements Initializable {
             anchorPane.setVisible(true);
             game1.setVisible(false);
             game2.setVisible(false);
+            pickAdventureLogo.setVisible(false);
             try {
                 showComponent("game.fxml");
             } catch (IOException ex) {
@@ -64,6 +55,7 @@ public class GameCentralController implements Initializable {
             anchorPane.setVisible(true);
             game1.setVisible(false);
             game2.setVisible(false);
+            pickAdventureLogo.setVisible(false);
             try {
                 showComponent("dinosaur.fxml");
             } catch (IOException ex) {

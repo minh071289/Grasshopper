@@ -8,6 +8,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ResourceBundle;
 
+import Model.TextToSpeech;
 import javafx.event.ActionEvent;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,6 +30,10 @@ public class Translator implements Initializable {
     private TextArea textTo;
     @FXML
     private Button transButton;
+    @FXML
+    private Button speak1;
+    @FXML
+    private Button speak2;
     private String currentLang;
     private String transLang;
     private static final int MAX_CHARACTER_COUNT = 600;
@@ -97,6 +102,27 @@ public class Translator implements Initializable {
         }
     }
 
+    @FXML
+    public void tts1() {
+        if (currentLang.equals("English")) {
+            TextToSpeech pronounce = new TextToSpeech(textFrom.getText(), "hl=en-us", "Mike", Integer.toString(0));
+            pronounce.speak();
+        } else {
+            TextToSpeech pronounce = new TextToSpeech(textFrom.getText(), "hl=vi-vn", "Chi", Integer.toString(0));
+            pronounce.speak();
+        }
+    }
+
+    @FXML
+    public void tts2() {
+        if (transLang.equals("English")) {
+            TextToSpeech pronounce = new TextToSpeech(textTo.getText(), "hl=en-us", "Mike", Integer.toString(0));
+            pronounce.speak();
+        } else {
+            TextToSpeech pronounce = new TextToSpeech(textTo.getText(), "hl=vi-vn", "Chi", Integer.toString(0));
+            pronounce.speak();
+        }
+    }
     private static String translate(String languageFrom, String languageTo, String text) throws IOException {
         String urlStr = "https://script.google.com/macros/s/AKfycbxCc7iNhd4CirHudoIbxnNLJn3G3yORKVpdy-coMUVM5N4scqGYStJ-t_ygVK3hvrYb/exec" +
                 "?q=" + URLEncoder.encode(text, "UTF-8") +

@@ -2,6 +2,7 @@ package org.example.eapp;
 
 import Model.Hangman;
 import Model.HangmanWordlist;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
@@ -10,9 +11,8 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.util.List;
@@ -28,9 +28,7 @@ public class HangmanController extends GameCentralController implements Initiali
     @FXML
     private ImageView imageHangman;
     @FXML
-    private AnchorPane resultPane;
-    @FXML
-    private ImageView resultImage;
+    private ImageView hangmanMain;
 
     Hangman myHangman;
     @Override
@@ -52,14 +50,15 @@ public class HangmanController extends GameCentralController implements Initiali
         for (String label : keyLabels) {
             Button button = new Button(label);
             button.setStyle(
-                    "-fx-background-color: linear-gradient(#f29b4e, #ff7828), " +
-                            "linear-gradient(#fb8d13 50%, #f29b4e 100%), " +
-                            "linear-gradient(#f29b4e 50%, #ff7828 100%), " +
-                            "linear-gradient(#ff7828, #f29b4e);" +
+                    "-fx-background-color: black;"+
+                            "-fx-effect: dropshadow(gaussian, rgba(255,165,0,0.8), 5, 0, 0, 1)" +
+                            "dropshadow(gaussian, rgba(255,165,0,0.8), 5, -1, 0, 1);" +
                             "-fx-background-radius: 5px;" +
-                            "-fx-font-size: 8.5px;" +
+                            "-fx-font-size: 10px;" +
                             "-fx-font-weight: bold;" +
-                            "-fx-text-fill: white;"
+                            "-fx-text-fill: orange;" +
+                            "-fx-padding: 5px 10px;" +
+                            "-fx-background-insets: 3px;"
             );
             button.setPrefWidth(32);
             button.setPrefHeight(32);
@@ -67,11 +66,13 @@ public class HangmanController extends GameCentralController implements Initiali
             if(!button.getText().equals("\uD83D\uDCA1")) {
                 button.setOnAction(event -> {
                     keyPressEventHandler(label);
+                    hangmanMain.setVisible(false);
                     button.setVisible(false);
                 });
             } else {
                 button.setOnAction(event -> {
                     hint.setVisible(true);
+                    hangmanMain.setVisible(false);
                     hint.setText(myHangman.getHint());
                     button.setVisible(false);
                 });
@@ -86,7 +87,6 @@ public class HangmanController extends GameCentralController implements Initiali
         hint.setAlignment(Pos.CENTER);
         answer.setAlignment(Pos.CENTER);
         hint.setVisible(false);
-        resultPane.setVisible(false);
     }
     public void setWordToGuess(int n) {
         for(int i=0; i<n; ++i) {
@@ -101,14 +101,17 @@ public class HangmanController extends GameCentralController implements Initiali
         setCurrentWordForGridPane(myHangman.getWordToGuess());
         setImageForWrongGuess(myHangman.getWrongGuess());
         if(myHangman.isOver() || myHangman.isWin()) {
-            resultPane.setVisible(true);
-            String path = "file:C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\dino.png";
+            String path = "file:D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Hangman\\lose.png";
             if(myHangman.isWin()) {
-                path = "C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\dino.png";
+                path = "file:D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Hangman\\win.png";
+            } else {
+                for(int i=0; i<myHangman.getKey().length(); ++i) {
+                    if(((Label) answer.getChildren().get(i)).getText().equals("_")) {
+                        ((Label) answer.getChildren().get(i)).setText(String.valueOf(myHangman.getKey().charAt(i)));
+                    }
+                }
             }
-            Image newImage = new Image(path);
-            resultImage.setImage(newImage);
-            hint.setVisible(false);
+            imageHangman.setImage(new Image(path));
         }
     }
     void setCurrentWordForGridPane(List<Character> listChar) {
@@ -120,7 +123,7 @@ public class HangmanController extends GameCentralController implements Initiali
         }
     }
     void setImageForWrongGuess(int i) {
-        String path = "file:C:\\Users\\HP\\Documents\\code\\GIThub\\GrasshopperTheTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Hangman\\roach" +
+        String path = "file:D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Hangman\\roach" +
                 i + ".png";
         Image newImage = new Image(path);
         imageHangman.setImage(newImage);
