@@ -21,7 +21,7 @@
       </ImageView>
       <TextArea fx:id="textFrom" layoutX="7.0" layoutY="138.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="244.0" prefWidth="223.0" styleClass="border_set" stylesheets="@../../../cssStyleSheet/style.css" wrapText="true">
       </TextArea>
-      <TextArea fx:id="textTo" editable="false" layoutX="354.0" layoutY="138.0" maxWidth="-Infinity" minWidth="-Infinity" opacity="0.47" prefHeight="244.0" prefWidth="223.0" styleClass="border_set" stylesheets="@../../../cssStyleSheet/style.css" wrapText="true">
+      <TextArea fx:id="textTo" editable="false" layoutX="354.0" layoutY="138.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="244.0" prefWidth="223.0" styleClass="border_set" stylesheets="@../../../cssStyleSheet/style.css" wrapText="true">
       </TextArea>
       <ComboBox fx:id="langFrom" layoutX="48.0" layoutY="90.0" onAction="#currentLanguageChanged" prefHeight="35.0" prefWidth="181.0" promptText="Language" styleClass="border_set" stylesheets="@../../../cssStyleSheet/style.css">
       </ComboBox>

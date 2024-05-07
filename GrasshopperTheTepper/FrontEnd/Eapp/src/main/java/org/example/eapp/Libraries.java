@@ -38,8 +38,6 @@ public class Libraries implements Initializable {
     @FXML
     private WebView webView;
     @FXML
-    private ButtonBar helperBar;
-    @FXML
     private Button playButton;
     @FXML
     private Button pauseButton;
@@ -53,6 +51,8 @@ public class Libraries implements Initializable {
     private ImageView logoFooter;
     @FXML
     private Label listView;
+    @FXML
+    private Label audioBar;
     private Duration savedPosition = Duration.ZERO;
 
     void setAllButtonInvisible(boolean check) {
@@ -65,13 +65,16 @@ public class Libraries implements Initializable {
         logoFooter.setVisible(check);
         listView.setVisible(check);
         mainPage.setVisible(!check);
+        pauseButton.setVisible(!check);
+        playButton.setVisible(!check);
+        stopButton.setVisible(!check);
+        audioBar.setVisible(!check);
     }
     void onAllStoriesButton() {
         setAllButtonInvisible(false);
         webView.setVisible(true);
         webView.setPrefWidth(600);
         webView.setPrefHeight(400);
-        helperBar.setVisible(true);
     }
     @FXML
     void onStory1ButtonClick() {
@@ -121,8 +124,6 @@ public class Libraries implements Initializable {
                 String translatedText = trans.translate();
                 webView.getEngine().executeScript("document.getSelection().getRangeAt(0).deleteContents();"
                         + "document.getSelection().getRangeAt(0).insertNode(document.createTextNode('" + translatedText + "'))");
-            } else {
-                webEngine.load(htmlFile.toURI().toString());
             }
         });
     }
@@ -144,7 +145,6 @@ public class Libraries implements Initializable {
             mediaPlayer.stop();
             setAllButtonInvisible(true);
             webView.setVisible(false);
-            helperBar.setVisible(false);
         });
         pauseButton.setOnAction(e -> {
             savedPosition = mediaPlayer.getCurrentTime();
@@ -157,14 +157,13 @@ public class Libraries implements Initializable {
         webView.setVisible(false);
         webView.setPrefWidth(1);
         webView.setPrefHeight(1);
-        helperBar.setVisible(false);
+        setAllButtonInvisible(true);
         story1.setStyle("-fx-background-color: null;");
         story2.setStyle("-fx-background-color: null;");
         story3.setStyle("-fx-background-color: null;");
         story4.setStyle("-fx-background-color: null;");
         story5.setStyle("-fx-background-color: null;");
         mainPage.setStyle("-fx-background-color: null;");
-        mainPage.setVisible(false);
     }
 
 }
