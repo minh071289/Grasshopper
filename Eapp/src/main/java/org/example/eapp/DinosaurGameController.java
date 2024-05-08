@@ -87,7 +87,7 @@ public class DinosaurGameController implements Initializable {
     private int score = 0;
 
     DataConnection connection = new DataConnection();
-    List<Question> dinosaurQs = connection.getDinosaurDatabase();
+    List<Question> dinosaurQs = Question.getDinosaurDatabase();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -97,9 +97,9 @@ public class DinosaurGameController implements Initializable {
 
         try {
             dinoImg = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
-            cactus1Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
-            cactus2Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
-            cactus3Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
+            cactus1Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\cactus1.png"));
+            cactus2Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\cactus2.png"));
+            cactus3Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\cactus3.png"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

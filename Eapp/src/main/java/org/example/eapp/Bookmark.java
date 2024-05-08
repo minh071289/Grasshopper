@@ -103,11 +103,11 @@ public class Bookmark implements Initializable {
 
         // Chọn âm thanh tương ứng dựa trên giá trị của slider
         if (value >= 75) {
-            soundFile = "D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\fightingSound\\Sound0.mp3";
+            soundFile = "D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\fightingSound\\Sound75.mp3";
         } else if (value >= 45) {
             soundFile = "D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\fightingSound\\Sound45.mp3";
         } else {
-            soundFile = "D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\fightingSound\\Sound75.mp3";
+            soundFile = "D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\fightingSound\\Sound0.mp3";
         }
 
         // Phát âm thanh

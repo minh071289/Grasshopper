@@ -101,9 +101,9 @@ public class HangmanController implements Initializable {
         setCurrentWordForGridPane(myHangman.getWordToGuess());
         setImageForWrongGuess(myHangman.getWrongGuess());
         if(myHangman.isOver() || myHangman.isWin()) {
-            String path = "file:D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Hangman\\lose.png";
+            String path = "file:D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Hangman\\lose.png";
             if(myHangman.isWin()) {
-                path = "file:D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Hangman\\win.png";
+                path = "file:D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Hangman\\win.png";
             } else {
                 for(int i=0; i<myHangman.getKey().length(); ++i) {
                     if(((Label) answer.getChildren().get(i)).getText().equals("_")) {
@@ -123,7 +123,7 @@ public class HangmanController implements Initializable {
         }
     }
     void setImageForWrongGuess(int i) {
-        String path = "file:D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Hangman\\roach" +
+        String path = "file:D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Hangman\\roach" +
                 i + ".png";
         Image newImage = new Image(path);
         imageHangman.setImage(newImage);

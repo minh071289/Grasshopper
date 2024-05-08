@@ -1,4 +1,4 @@
-package org.example.dinosaurgame;
+package Model.DinosaurGame;
 
 public class Dinosaur {
     private int x;
