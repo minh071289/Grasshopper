@@ -232,6 +232,8 @@ public class Bookmark implements Initializable {
                 removeBookmarkWord(selectedWord);
                 if (data.containsKey(newWord.getWord())) {
                     notice.setText("Có từ '" + newWord.getWord().trim() +"' trong Bookmark rùi bạn ơi " + Tepper.getRandomSadEmotion());
+                    addBookmarkWord(selectedWord);
+                    listView.getItems().add(selectedWord.getWord().trim());
                 } else {
                     addBookmarkWord(newWord);
                     listView.getItems().add(newWord.getWord().trim());
@@ -243,7 +245,6 @@ public class Bookmark implements Initializable {
             wordText.clear();
             meanText.clear();
         }
-
     }
 }
 
