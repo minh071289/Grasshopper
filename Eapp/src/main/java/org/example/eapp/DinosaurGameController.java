@@ -134,7 +134,7 @@ public class DinosaurGameController implements Initializable {
         }.start();
 
         // Place cactus periodically
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(2), e -> placeCactus()));
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), e -> placeCactus()));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 

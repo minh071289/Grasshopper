@@ -13,13 +13,13 @@ public class TextToSpeech {
     String textToSpeech;
     String language;
     String voiceName;
-    String speedRate;
+    String speed;
 
-    public TextToSpeech(String textToSpeech, String language, String voiceName, String speedRate) {
+    public TextToSpeech(String textToSpeech, String language, String voiceName, String speed) {
         this.textToSpeech = textToSpeech;
         this.language = language;
         this.voiceName = voiceName;
-        this.speedRate = speedRate;
+        this.speed = speed;
     }
 
     public void speak() {
@@ -27,13 +27,13 @@ public class TextToSpeech {
 
         try {
             String apiUrl = "http://api.voicerss.org/?";
-            String apiKeyParam = "key=" + URLEncoder.encode(apiKey, StandardCharsets.UTF_8);
-            String textParam = "src=" + URLEncoder.encode(textToSpeech, StandardCharsets.UTF_8);
-            String langParam = language;
-            String voiceParam = "v=" + voiceName;
-            String speedParam = "r=" + speedRate;
+            String apKey = "key=" + URLEncoder.encode(apiKey, StandardCharsets.UTF_8);
+            String text = "src=" + URLEncoder.encode(textToSpeech, StandardCharsets.UTF_8);
+            String lang = language;
+            String voice = "v=" + voiceName;
+            String speedOfAudio = "r=" + speed;
 
-            URL url = new URL(apiUrl + apiKeyParam + "&" + textParam + "&" + langParam + "&" + voiceParam + "&" + speedParam);
+            URL url = new URL(apiUrl + apKey + "&" + text + "&" + lang + "&" + voice + "&" + speedOfAudio);
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -44,7 +44,7 @@ public class TextToSpeech {
                 InputStream inputStream = conn.getInputStream();
                 BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
 
-                // Convert the audio format to WAV
+                // Convert audio into wav
                 AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(bufferedInputStream);
                 AudioFormat targetFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED,
                         audioInputStream.getFormat().getSampleRate(),
@@ -55,7 +55,7 @@ public class TextToSpeech {
                         false);
                 AudioInputStream convertedInputStream = AudioSystem.getAudioInputStream(targetFormat, audioInputStream);
 
-                // Play the converted audio
+                // Play audio
                 Clip clip = AudioSystem.getClip();
                 clip.open(convertedInputStream);
                 clip.start();
