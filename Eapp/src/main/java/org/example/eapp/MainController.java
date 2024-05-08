@@ -43,7 +43,7 @@ public class MainController implements Initializable {
     }
 
     void setBackgroundWhite() {
-        controlPane.setStyle("-fx-background-image: url('file:C:/Users/HP/Documents/code/GIThub/Grasshopper/GrasshopperTheTepper/FrontEnd/Eapp/src/main/resources/Background/tepperWhite.png')");
+        controlPane.setStyle("-fx-background-image: url('file:D:/Grasshopper/Grasshopper/Eapp/src/main/resources/Background/tepperWhite.png')");
     }
 
     @Override
@@ -53,7 +53,7 @@ public class MainController implements Initializable {
         libraryBtn.setStyle("-fx-background-color:null;");
         gameCentral.setStyle("-fx-background-color:null;");
         bookmarkBtn.setStyle("-fx-background-color:null;");
-        controlPane.setStyle("-fx-background-image: url('file:C:/Users/HP/Documents/code/GIThub/Grasshopper/GrasshopperTheTepper/FrontEnd/Eapp/src/main/resources/Background/tepper2.png')");
+        controlPane.setStyle("-fx-background-image: url('file:D:/Grasshopper/Grasshopper/Eapp/src/main/resources/Background/tepper2.png')");
         translateBtn.setOnMouseClicked(e -> {
             setBackgroundWhite();
             try {

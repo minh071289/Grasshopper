@@ -1,8 +1,7 @@
 package org.example.eapp;
 
 import Model.Hangman;
-import Model.HangmanWordlist;
-import javafx.event.ActionEvent;
+import Database.HangmanWordlist;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
@@ -88,6 +87,8 @@ public class HangmanController implements Initializable {
         answer.setAlignment(Pos.CENTER);
         hint.setVisible(false);
     }
+
+    //Set answer with _
     public void setWordToGuess(int n) {
         for(int i=0; i<n; ++i) {
             Label label = new Label("_");
@@ -105,6 +106,7 @@ public class HangmanController implements Initializable {
             if(myHangman.isWin()) {
                 path = "file:D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Hangman\\win.png";
             } else {
+                //Set correct word
                 for(int i=0; i<myHangman.getKey().length(); ++i) {
                     if(((Label) answer.getChildren().get(i)).getText().equals("_")) {
                         ((Label) answer.getChildren().get(i)).setText(String.valueOf(myHangman.getKey().charAt(i)));
@@ -114,6 +116,7 @@ public class HangmanController implements Initializable {
             imageHangman.setImage(new Image(path));
         }
     }
+
     void setCurrentWordForGridPane(List<Character> listChar) {
         int index = 0;
         for (Character c : listChar) {

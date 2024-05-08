@@ -1,6 +1,5 @@
 package org.example.eapp;
 
-import Database.DataConnection;
 import Database.Question;
 import Model.DinosaurGame.Cactus;
 import javafx.animation.AnimationTimer;
@@ -38,22 +37,22 @@ public class DinosaurGameController implements Initializable {
 
     private final List<Cactus> cactusList = new ArrayList<>();
 
-    private final int cactus1Width = 34;
-    private final int cactus2Width = 69;
-    private final int cactus3Width = 102;
+    private final int cactus1Width = 33;
+    private final int cactus2Width = 68;
+    private final int cactus3Width = 101;
 
     private final int cactusHeight = 70;
     private final int cactusX = 700;
     private int cactusY = boardHeight - cactusHeight;
 
     private double velocityY = 0;
-    private double velocityX = -8;
-    private final double gravity = 0.4;
+    private double velocityX = -7;
+    private final double gravity = 0.35;
 
     private boolean gameOver = false;
     private int cactusJumps = 0;
     private boolean gamePaused = false;
-    private Image dinoImg;
+    private Image tepperImg;
     private Image cactus1Img;
     private Image cactus2Img;
     private Image cactus3Img;
@@ -85,8 +84,6 @@ public class DinosaurGameController implements Initializable {
     Label clock;
     private Timeline questionTimer;
     private int score = 0;
-
-    DataConnection connection = new DataConnection();
     List<Question> dinosaurQs = Question.getDinosaurDatabase();
 
     @Override
@@ -96,7 +93,7 @@ public class DinosaurGameController implements Initializable {
         canvas.setHeight(boardHeight);
 
         try {
-            dinoImg = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
+            tepperImg = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
             cactus1Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\cactus1.png"));
             cactus2Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\cactus2.png"));
             cactus3Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\cactus3.png"));
@@ -181,9 +178,9 @@ public class DinosaurGameController implements Initializable {
         // Draw dinosaur
         velocityY += gravity;
         dinoY = (int) Math.min(dinoY + velocityY, boardHeight - dinoHeight);
-        context.drawImage(dinoImg, dinoX, dinoY, dinoWidth, dinoHeight);
+        context.drawImage(tepperImg, dinoX, dinoY, dinoWidth, dinoHeight);
 
-        // Draw cacti
+        // Draw cactus
         for (Cactus cactus : cactusList) {
             cactus.setX((int) (cactus.getX() + velocityX));
             context.drawImage(cactus.getImg(), cactus.getX(), cactus.getY(), cactus.getWidth(), cactusHeight);
@@ -207,10 +204,10 @@ public class DinosaurGameController implements Initializable {
         if (placeCactusChance > 0.9) { // 10% chance
             cactusImg = cactus3Img;
             cactusWidth = cactus3Width;
-        } else if (placeCactusChance > 0.7) { // 30% chance
+        } else if (placeCactusChance > 0.7) { // 20% chance
             cactusImg = cactus2Img;
             cactusWidth = cactus2Width;
-        } else { // 60% chance
+        } else { // 70% chance
             cactusImg = cactus1Img;
             cactusWidth = cactus1Width;
         }

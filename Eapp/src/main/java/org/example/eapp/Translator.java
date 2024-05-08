@@ -103,6 +103,7 @@ public class Translator implements Initializable {
         }
     }
 
+    //TTS for TextFrom
     @FXML
     public void tts1() {
         if (currentLang.equals("English")) {
@@ -114,6 +115,7 @@ public class Translator implements Initializable {
         }
     }
 
+    //TTS for TextTo
     @FXML
     public void tts2() {
         if (transLang.equals("English")) {

@@ -141,14 +141,14 @@ public class Libraries implements Initializable {
             mediaPlayer.play();
             mediaPlayer.seek(savedPosition);
         });
+        pauseButton.setOnAction(e -> {
+            savedPosition = mediaPlayer.getCurrentTime();
+            mediaPlayer.pause();
+        });
         mainPage.setOnAction(e -> {
             mediaPlayer.stop();
             setAllButtonInvisible(true);
             webView.setVisible(false);
-        });
-        pauseButton.setOnAction(e -> {
-            savedPosition = mediaPlayer.getCurrentTime();
-            mediaPlayer.pause();
         });
     }
 
