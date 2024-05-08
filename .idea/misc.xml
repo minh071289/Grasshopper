@@ -4,8 +4,8 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/Grasshopper-Li - Copy/FrontEnd/Eapp/pom.xml" />
-        <option value="$PROJECT_DIR$/GrasshopperTheTepper/FrontEnd/Eapp/pom.xml" />
+        <option value="$PROJECT_DIR$/FrontEnd/Eapp/pom.xml" />
+        <option value="$PROJECT_DIR$/Dictionary/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,29 @@
+h1 {
+        font-family: Baskerville, serif;
+        color: #666060;
+        font-size: 32px;
+        font-weight: normal;
+        text-align: center;
+        margin-bottom: 50px;
+        letter-spacing: 1.5px;
+}
+body {
+        font-family: 'goudyBookletter';
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 1.5px;
+        right-margin: 3.5px;
+}
+blockquote {
+        font-family: 'goudyBookletter';
+        font-style: italic;
+        font-size: 18px;
+        color: #777;
+        text-align: center;
+}
+.image-container {
+        margin: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+}

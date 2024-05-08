@@ -1,3 +1,4 @@
+
 package org.example.eapp;
 
 public class Word {
@@ -28,4 +29,3 @@ public class Word {
         this.def = def;
     }
 }
-

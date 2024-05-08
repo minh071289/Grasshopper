@@ -1,3 +1,12 @@
+.border_set {
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-font-family: "Calibri";
+    -fx-font-size: 15px;
+}
 .border_custom {
     -fx-background-color: white;
     -fx-border-color: #ECECEC;
@@ -5,10 +14,9 @@
     -fx-background-radius: 8px;
     -fx-border-radius: 8px;
 }
-#definitionView {
-   -fx-background-color: white;
-   -fx-border-color: #ECECEC;
-   -fx-border-width: 2px;
-   -fx-background-radius: 8px;
-   -fx-border-radius: 8px;
+.buttonSpeak {
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
 }

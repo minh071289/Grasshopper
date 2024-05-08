@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.eapp.HangmanController">
+    <children>
+        <ImageView fitHeight="492.0" fitWidth="670.0" layoutX="-26.0" layoutY="-56.0" pickOnBounds="true" x="-25.0">
+            <image>
+                <Image url="@../../../Hangman/hall1.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="314.0" fitWidth="323.0" layoutX="490.0" layoutY="-236.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Hangman/spider.png" />
+            </image>
+        </ImageView>
+        <GridPane fx:id="keyboard" layoutX="6.0" layoutY="256.0" prefHeight="146.0" prefWidth="554.0">
+        </GridPane>
+        <GridPane fx:id="answer" layoutX="129.0" layoutY="199.0" prefHeight="54.0" prefWidth="314.0">
+        </GridPane>
+        <ImageView fx:id="imageHangman" fitHeight="192.0" fitWidth="291.0" layoutX="141.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Hangman/roach0.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="hint" alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="169.0" prefHeight="36.0" prefWidth="323.0" text="hi">
+            <font>
+                <Font name="Comic Sans MS Italic" size="14.0" />
+            </font></Label>
+        <ImageView fx:id="hangmanMain" fitHeight="297.0" fitWidth="381.0" layoutX="94.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Hangman/HangManMain.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

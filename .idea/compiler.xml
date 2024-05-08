@@ -9,5 +9,8 @@
         <module name="Eapp" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Dictionary" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>
