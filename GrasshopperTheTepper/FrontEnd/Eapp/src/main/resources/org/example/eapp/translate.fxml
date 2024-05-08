@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.eapp.Translator">
+   <children>
+      <ImageView fitHeight="552.0" fitWidth="740.0" layoutX="-76.0" layoutY="-80.0" opacity="0.3" pickOnBounds="true">
+         <image>
+            <Image url="@../../../Background/tEppEr__700_x_530_px_-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="310.0" layoutX="145.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Background/translationLogoText.png" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="textFrom" layoutX="7.0" layoutY="138.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="244.0" prefWidth="223.0" styleClass="border_set" stylesheets="@../../../cssStyleSheet/style.css" wrapText="true">
+      </TextArea>
+      <TextArea fx:id="textTo" editable="false" layoutX="354.0" layoutY="138.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="244.0" prefWidth="223.0" styleClass="border_set" stylesheets="@../../../cssStyleSheet/style.css" wrapText="true">
+      </TextArea>
+      <ComboBox fx:id="langFrom" layoutX="48.0" layoutY="90.0" onAction="#currentLanguageChanged" prefHeight="35.0" prefWidth="181.0" promptText="Language" styleClass="border_set" stylesheets="@../../../cssStyleSheet/style.css">
+      </ComboBox>
+      <ComboBox fx:id="langTo" layoutX="394.0" layoutY="92.0" onAction="#targetLanguageChanged" prefHeight="35.0" prefWidth="181.0" promptText="Language" styleClass="border_set" stylesheets="@../../../cssStyleSheet/style.css" />
+      <Button fx:id="transButton" layoutX="262.0" layoutY="225.0" mnemonicParsing="false" onAction="#onTransButtonClick" prefHeight="27.0" prefWidth="62.0" styleClass="border_set" stylesheets="@../../../cssStyleSheet/style.css">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Background/trans.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="speak1" layoutX="7.0" layoutY="90.0" mnemonicParsing="false" onAction="#tts1" prefHeight="35.0" prefWidth="29.0" styleClass="buttonSpeak" stylesheets="@../../../cssStyleSheet/style.css">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../Background/speak.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="speak2" layoutX="353.0" layoutY="92.0" mnemonicParsing="false" onAction="#tts2" prefHeight="35.0" prefWidth="29.0" styleClass="buttonSpeak" stylesheets="@../../../cssStyleSheet/style.css">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../Background/speak.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

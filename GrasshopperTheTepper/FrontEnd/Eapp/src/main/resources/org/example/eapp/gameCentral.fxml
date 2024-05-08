@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="398.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.eapp.GameCentralController">
+   <children>
+      <AnchorPane fx:id="anchorPane" layoutX="9.0" layoutY="12.0" prefHeight="41.0" prefWidth="82.0" />
+      <Button fx:id="game1" layoutX="33.0" layoutY="83.0" mnemonicParsing="false" prefHeight="151.0" prefWidth="178.0">
+         <graphic>
+            <ImageView fitHeight="247.0" fitWidth="247.0" layoutX="-20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Background/game1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="game2" layoutX="295.0" layoutY="83.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="177.0">
+         <graphic>
+            <ImageView fitHeight="247.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Background/game2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fx:id="pickAdventureLogo" fitHeight="42.0" fitWidth="393.0" layoutX="127.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Hangman/pickYourAdventure.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
