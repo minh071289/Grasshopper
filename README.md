@@ -5,12 +5,12 @@ Nguyễn Thị Minh Ly - 23020399 <br>
 Trần Trung Hiếu - 22026513 <br>
 
 ## Description
-Đây là ứng dụng được thiết kế để hỗ trợ học Ngoại ngữ. Lấy nguồn cảm hứng từ Châu chấu, team <em>Grasshopper</em> xây dựng ứng dụng xoay quanh linh vật <em>Tepper</em>.
-Chúng tôi mong muốn người học và <em>Tepper</em> có sự tương tác trong quá trình học tập. Ứng dụng được viết bằng ngôn ngữ Java và thư viện JavaFX. 
+Đây là ứng dụng được thiết kế để hỗ trợ học Ngoại ngữ. Lấy nguồn cảm hứng từ Châu chấu, team Grasshopper xây dựng ứng dụng xoay quanh linh vật Tepper.
+Chúng tôi mong muốn người học và Tepper có sự tương tác trong quá trình học tập. Ứng dụng được viết bằng ngôn ngữ Java và thư viện JavaFX. 
 Ứng dụng sử dụng <em>E_V.txt, V_E.txt & BookmarkList.txt</em> để lưu trữ dữ liệu từ điển, các tệp file <em>.mp3 & .wav</em> dùng cho âm thanh phát sẵn,
 <em>API Google Translate & TextToSpeech Voice RSS</em> cho tính năng dịch thuật và phát âm. <br>
 - Ứng dụng học tiếng Anh
-- Ngôn ngữ: <em>Java</em>, <em>thư viện: JavaFx</em>
+- Ngôn ngữ: <em>Java</em>, thư viện: </em>JavaFx</em>
 - Cơ sở dữ liệu: <em>.txt, .wav, .mp3</em>
 
 ## UML
