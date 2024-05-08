@@ -72,5 +72,19 @@
             <Font name="ArcadeClassic" size="96.0" />
          </font>
       </Label>
+      <ImageView fx:id="instructionPic" fitHeight="374.0" fitWidth="497.0" layoutX="28.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Dinosaur/instructionPic.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="startNow" layoutX="181.0" layoutY="236.0" mnemonicParsing="false" prefWidth="169.0" style="-fx-background-color: null;">
+         <graphic>
+            <ImageView fitHeight="57.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Dinosaur/start.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

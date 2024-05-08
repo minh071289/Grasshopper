@@ -13,6 +13,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.util.Duration;
 
@@ -57,6 +58,10 @@ public class DinosaurGameController implements Initializable {
     private Image cactus2Img;
     private Image cactus3Img;
     @FXML
+    private ImageView instructionPic;
+    @FXML
+    private Button startNow;
+    @FXML
     Label readySet;
     @FXML
     Label instruction;
@@ -98,18 +103,25 @@ public class DinosaurGameController implements Initializable {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-
-        readySet.setText("3");
-        Timeline timer = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
-            int currentTime = Integer.parseInt(readySet.getText());
-            if(currentTime>0) {
-                currentTime--;
-                readySet.setText(String.valueOf(currentTime));
-            }
-        }));
-        timer.setCycleCount(3);
-        timer.play();
-        timer.setOnFinished(event -> readySet.setVisible(false));
+        gamePaused = true;
+        startNow.setOnMouseClicked(event -> {
+            instructionPic.setVisible(false);
+            startNow.setVisible(false);
+            readySet.setText("3");
+            Timeline timer = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+                int currentTime = Integer.parseInt(readySet.getText());
+                if(currentTime>0) {
+                    currentTime--;
+                    readySet.setText(String.valueOf(currentTime));
+                }
+            }));
+            timer.setCycleCount(3);
+            timer.play();
+            timer.setOnFinished(e -> {
+                readySet.setVisible(false);
+                gamePaused = false;
+            });
+        });
 
         // Start game loop
         new AnimationTimer() {
@@ -219,6 +231,9 @@ public class DinosaurGameController implements Initializable {
             instruction.setVisible(false);
             jiaYou.setText("Keep Going\n"+"\uD83E\uDD20");
         }
+        if(keyCode == keyCode.RIGHT) {
+            instruction.setVisible(false);
+        }
 
         if (cactusJumps % 4 == 0) {
             askQuestion();
@@ -228,7 +243,7 @@ public class DinosaurGameController implements Initializable {
 
     void askQuestion() {
         gamePaused = true;
-        clock.setText("10");
+        clock.setText("20");
         questionTimer = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             int currentTime = Integer.parseInt(clock.getText());
             if(currentTime>0) {
@@ -236,7 +251,7 @@ public class DinosaurGameController implements Initializable {
                 clock.setText(String.valueOf(currentTime));
             }
         }));
-        questionTimer.setCycleCount(10);
+        questionTimer.setCycleCount(20);
         questionTimer.play();
 
         questionTimer.setOnFinished(event -> {
@@ -247,8 +262,8 @@ public class DinosaurGameController implements Initializable {
         Question randomQuestion = dinosaurQs.get(randomIndex);
 
         question.setText(randomQuestion.getQuestion());
-        choiceA.setText(randomQuestion.getChoiceA());
-        choiceB.setText(randomQuestion.getChoiceB());
+        choiceA.setText("A.  " + randomQuestion.getChoiceA());
+        choiceB.setText("B.  " + randomQuestion.getChoiceB());
 
         setQsBtnVisible(true);
 

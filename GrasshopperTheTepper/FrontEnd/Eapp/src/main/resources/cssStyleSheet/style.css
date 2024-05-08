@@ -7,6 +7,13 @@
     -fx-font-family: "Calibri";
     -fx-font-size: 15px;
 }
+.border_custom {
+    -fx-background-color: white;
+    -fx-border-color: #ECECEC;
+    -fx-border-width: 2px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
 .buttonSpeak {
     -fx-background-color: white;
     -fx-border-color: black;

@@ -65,7 +65,7 @@ public class MainController implements Initializable {
         searchWordBtn.setOnMouseClicked(e -> {
             setBackgroundWhite();
             try {
-                showComponent("hello-view.fxml");
+                showComponent("search.fxml");
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -82,6 +82,14 @@ public class MainController implements Initializable {
             setBackgroundWhite();
             try {
                 showComponent("gameCentral.fxml");
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        bookmarkBtn.setOnMouseClicked(e -> {
+            setBackgroundWhite();
+            try {
+                showComponent("bookmark.fxml");
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
