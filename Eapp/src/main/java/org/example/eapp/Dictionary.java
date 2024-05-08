@@ -17,7 +17,7 @@ import java.util.*;
 
 public class Dictionary implements Initializable {
     private static final String DATA_FILE_EV = "D:\\Grasshopper\\Grasshopper\\Eapp\\data\\E_V.txt";
-    private static final String DATA_FILE_VE = "D:\\Grasshopper\\Grasshopper\\Eapp\\data\\E_V.txt";
+    private static final String DATA_FILE_VE = "D:\\Grasshopper\\Grasshopper\\Eapp\\data\\V_E.txt";
     private static final String BOOKMARK_FILE_PATH = "D:\\Grasshopper\\Grasshopper\\Eapp\\data\\BookmarkList.txt";
     private static final String SPLITTING_CHARACTERS = "<html>";
     private final Map<String, Word> data = new HashMap<>();
