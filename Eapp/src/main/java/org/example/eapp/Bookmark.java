@@ -229,10 +229,10 @@ public class Bookmark implements Initializable {
             newWord.setWord(wordText.getText().trim());
             newWord.setDef("<html>"+meanText.getText().trim());
             if (!(newWord.getWord().trim().isEmpty()) && !Objects.equals(newWord.getDef().trim(), "<html>")) {
+                removeBookmarkWord(selectedWord);
                 if (data.containsKey(newWord.getWord())) {
                     notice.setText("Có từ '" + newWord.getWord().trim() +"' trong Bookmark rùi bạn ơi " + Tepper.getRandomSadEmotion());
                 } else {
-                    removeBookmarkWord(selectedWord);
                     addBookmarkWord(newWord);
                     listView.getItems().add(newWord.getWord().trim());
                     notice.setText("Tepper đã sửa '" + selectedWord.getWord() + "' thành '" + newWord.getWord() + "' rùi " + Tepper.getRandomHappyEmotion());
