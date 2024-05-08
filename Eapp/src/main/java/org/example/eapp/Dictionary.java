@@ -16,9 +16,9 @@ import java.net.URL;
 import java.util.*;
 
 public class Dictionary implements Initializable {
-    private static final String DATA_FILE_EV = "C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\data\\E_V.txt";
-    private static final String DATA_FILE_VE = "C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\data\\V_E.txt";
-    private static final String BOOKMARK_FILE_PATH = "C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\data\\BookmarkList.txt";
+    private static final String DATA_FILE_EV = "D:\\Grasshopper\\Grasshopper\\Eapp\\data\\E_V.txt";
+    private static final String DATA_FILE_VE = "D:\\Grasshopper\\Grasshopper\\Eapp\\data\\E_V.txt";
+    private static final String BOOKMARK_FILE_PATH = "D:\\Grasshopper\\Grasshopper\\Eapp\\data\\BookmarkList.txt";
     private static final String SPLITTING_CHARACTERS = "<html>";
     private final Map<String, Word> data = new HashMap<>();
     private List<String> bookmarkList  = new ArrayList<>();
@@ -58,7 +58,7 @@ public class Dictionary implements Initializable {
         }
         bookmarkButton.setStyle("-fx-background-color: null");
         speechButton.setStyle("-fx-background-color: null");
-        pane.setStyle("-fx-background-image: url('file:C:/Users/HP/Documents/code/GIThub/Grasshopper/GrasshopperTheTepper/FrontEnd/Eapp/src/main/resources/Dictionary/background.png')");
+        pane.setStyle("-fx-background-image: url('file:D:/Grasshopper/Grasshopper/Eapp/src/main/resources/Dictionary/background.png')");
 
         //Cài đặt default mode là English - Vietnamese
         noticeLabel.setText("Tepper đã sẵn sàng giúp bạn tra cứu " + Tepper.getRandomHappyEmotion());

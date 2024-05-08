@@ -30,7 +30,7 @@ public class Bookmark implements Initializable {
     private boolean isSoundPlaying = false;
     static final int INIT_VALUE = 100;
 
-    private static final String BOOKMARK_FILE_PATH = "C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\data\\BookmarkList.txt";
+    private static final String BOOKMARK_FILE_PATH = "D:\\Grasshopper\\Grasshopper\\Eapp\\data\\BookmarkList.txt";
     private static final String SPLITTING_CHARACTERS = "<html>";
     private Map<String, Word> data  = new HashMap<>();
     @FXML
@@ -55,7 +55,7 @@ public class Bookmark implements Initializable {
     private AnchorPane pane;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        pane.setStyle("-fx-background-image: url('file:C:/Users/HP/Documents/code/GIThub/Grasshopper/GrasshopperTheTepper/FrontEnd/Eapp/src/main/resources/BOOKMARK/background.png')");
+        pane.setStyle("-fx-background-image: url('file:D:/Grasshopper/Grasshopper/Eapp/src/main/resources/BOOKMARK/background.png')");
         addButton.setStyle("-fx-background-color: null;");
         editButton.setStyle("-fx-background-color: null;");
         deleteButton.setStyle("-fx-background-color: null;");
@@ -103,11 +103,11 @@ public class Bookmark implements Initializable {
 
         // Chọn âm thanh tương ứng dựa trên giá trị của slider
         if (value >= 75) {
-            soundFile = "C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\src\\main\\resources\\fightingSound\\Sound0.mp3";
+            soundFile = "D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\fightingSound\\Sound0.mp3";
         } else if (value >= 45) {
-            soundFile = "C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\src\\main\\resources\\fightingSound\\Sound45.mp3";
+            soundFile = "D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\fightingSound\\Sound45.mp3";
         } else {
-            soundFile = "C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\src\\main\\resources\\fightingSound\\Sound75.mp3";
+            soundFile = "D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\fightingSound\\Sound75.mp3";
         }
 
         // Phát âm thanh

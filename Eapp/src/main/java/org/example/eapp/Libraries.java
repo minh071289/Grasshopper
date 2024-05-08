@@ -79,36 +79,36 @@ public class Libraries implements Initializable {
     @FXML
     void onStory1ButtonClick() {
         onAllStoriesButton();
-        loadHTMLintoWebView("C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\data\\News\\Story1.html");
-        playFullSound("C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Sound\\Story1.wav");
+        loadHTMLintoWebView("D:\\Grasshopper\\Grasshopper\\Eapp\\data\\News\\Story1.html");
+        playFullSound("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Sound\\Story1.wav");
     }
 
     @FXML
     void onStory2ButtonClick() {
         onAllStoriesButton();
-        loadHTMLintoWebView("C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\data\\News\\Story2.html");
-        playFullSound("C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Sound\\Story2.wav");
+        loadHTMLintoWebView("D:\\Grasshopper\\Grasshopper\\Eapp\\data\\News\\Story2.html");
+        playFullSound("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Sound\\Story2.wav");
     }
 
     @FXML
     void onStory3ButtonClick() {
         onAllStoriesButton();
-        loadHTMLintoWebView("C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\data\\News\\Story3.html");
-        playFullSound("C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Sound\\Story3.wav");
+        loadHTMLintoWebView("D:\\Grasshopper\\Grasshopper\\Eapp\\data\\News\\Story3.html");
+        playFullSound("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Sound\\Story3.wav");
     }
 
     @FXML
     void onStory4ButtonClick() {
         onAllStoriesButton();
-        loadHTMLintoWebView("C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\data\\News\\Story4.html");
-        playFullSound("C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Sound\\Story4.wav");
+        loadHTMLintoWebView("D:\\Grasshopper\\Grasshopper\\Eapp\\data\\News\\Story4.html");
+        playFullSound("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Sound\\Story4.wav");
     }
 
     @FXML
     void onStory5ButtonClick() {
         onAllStoriesButton();
-        loadHTMLintoWebView("C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\data\\News\\Story5.html");
-        playFullSound("C:\\Users\\HP\\Documents\\code\\GIThub\\Grasshopper\\GrasshopperTheTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Sound\\Story5.wav");
+        loadHTMLintoWebView("D:\\Grasshopper\\Grasshopper\\Eapp\\data\\News\\Story5.html");
+        playFullSound("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Sound\\Story5.wav");
     }
 
     void loadHTMLintoWebView(String pathToHtml) {

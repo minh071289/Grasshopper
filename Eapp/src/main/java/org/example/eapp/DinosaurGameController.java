@@ -96,10 +96,10 @@ public class DinosaurGameController implements Initializable {
         canvas.setHeight(boardHeight);
 
         try {
-            dinoImg = new Image(new FileInputStream("D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
-            cactus1Img = new Image(new FileInputStream("D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\cactus1.png"));
-            cactus2Img = new Image(new FileInputStream("D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\cactus2.png"));
-            cactus3Img = new Image(new FileInputStream("D:\\learnWithTepper\\FrontEnd\\Eapp\\src\\main\\resources\\Dinosaur\\cactus3.png"));
+            dinoImg = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
+            cactus1Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
+            cactus2Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
+            cactus3Img = new Image(new FileInputStream("D:\\Grasshopper\\Grasshopper\\Eapp\\src\\main\\resources\\Dinosaur\\tepperPixel2.png"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
