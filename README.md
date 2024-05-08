@@ -15,20 +15,18 @@
 >
 >Ngôn ngữ: Java, thư viện: JavaFx
 >
->Cơ sở dữ liệu: .txt, .wav, .mp3, SQL (game **Cacti Hopper**)
+>Cơ sở dữ liệu: .txt, .wav, .mp3 (game **Cacti Hopper**)
 
 
 ## UML
-![438293771_1525217751727011_8939908668207426920_n](https://github.com/hieulouis2004/IMAGE/assets/146638068/c87a42ff-c4b7-45c8-9dc8-0a0cdf53a850)
+
+![image](https://github.com/minh071289/Grasshopper/assets/146638068/0385100c-feea-477e-b302-702ee02f60a2)
 
 ## Installation
 
 - Clone ứng dụng từ repo này.
 
 - Chạy ứng dùng từ class Main trong **org.example.eapp**
-
-- Ứng dụng sử dụng database quản lý bởi SQL
-
 
 ## Usage
 - **Dịch thuật**: Tính năng dịch từ **Anh-Việt** & **Việt-Anh**, phát âm đoạn văn bản được dịch 
@@ -54,15 +52,15 @@ Một phiên bản của thể loại game vượt chướng ngại vật. Ngư�
 ## Demo
 **1. Màn hình chính khi vào app**
 
-![image](https://github.com/hieulouis2004/IMAGE/assets/146638068/3348d77d-dc7f-480f-9fb8-f168c412f0d3)
+![image](https://github.com/minh071289/Grasshopper/assets/146638068/5a3e510c-3194-401a-a266-5769fec2a71e)
 
 **2. Màn hình Dịch thuật**
 
-![image](https://github.com/hieulouis2004/IMAGE/assets/146638068/a1073fd0-a0f7-470e-a614-d1f776579f97)
+![image](https://github.com/minh071289/Grasshopper/assets/146638068/c81cb20e-988b-4184-a7b6-cef4d07dc75a)
 
 **3. Từ điển**
 
-![image](https://github.com/hieulouis2004/IMAGE/assets/146638068/bb8817c9-1314-46d5-82de-0577a13eb993)
+![image](https://github.com/minh071289/Grasshopper/assets/146638068/dc652ea0-5cf7-458f-9757-091d1e7bd6d2)
 
 **4. Màn hình Bookmark**
 
