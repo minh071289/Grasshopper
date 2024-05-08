@@ -9,15 +9,20 @@ import java.net.URLEncoder;
 
 public class Translate {
     private String text;
-    public Translate(String text) {
+    private String languageFrom;
+    private String languageTo;
+    public Translate(String languageFrom, String languageTo, String text) {
+
         this.text = text;
+        this.languageFrom = languageFrom;
+        this.languageTo = languageTo;
     }
     public String translate () {
         try {
             String urlStr = "https://script.google.com/macros/s/AKfycbxCc7iNhd4CirHudoIbxnNLJn3G3yORKVpdy-coMUVM5N4scqGYStJ-t_ygVK3hvrYb/exec" +
                     "?q=" + URLEncoder.encode(text, "UTF-8") +
-                    "&target=" + "vi" +
-                    "&source=" + "en";
+                    "&target=" + languageTo +
+                    "&source=" + languageFrom;
             URL url = new URL(urlStr);
             StringBuilder response = new StringBuilder();
             HttpURLConnection con = (HttpURLConnection) url.openConnection();

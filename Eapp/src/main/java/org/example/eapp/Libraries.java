@@ -120,7 +120,7 @@ public class Libraries implements Initializable {
         webView.setOnMouseReleased(e -> {
             String selectedText = (String) webView.getEngine().executeScript("window.getSelection().toString()");
             if (!selectedText.isEmpty()) {
-                Translate trans = new Translate(selectedText);
+                Translate trans = new Translate("en","vi",selectedText);
                 String translatedText = trans.translate();
                 webView.getEngine().executeScript("document.getSelection().getRangeAt(0).deleteContents();"
                         + "document.getSelection().getRangeAt(0).insertNode(document.createTextNode('" + translatedText + "'))");

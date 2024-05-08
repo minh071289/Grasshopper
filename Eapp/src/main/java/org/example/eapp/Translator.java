@@ -9,6 +9,7 @@ import java.net.URLEncoder;
 import java.util.ResourceBundle;
 
 import Model.TextToSpeech;
+import Model.Translate;
 import javafx.event.ActionEvent;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -123,21 +124,8 @@ public class Translator implements Initializable {
             pronounce.speak();
         }
     }
-    private static String translate(String languageFrom, String languageTo, String text) throws IOException {
-        String urlStr = "https://script.google.com/macros/s/AKfycbxCc7iNhd4CirHudoIbxnNLJn3G3yORKVpdy-coMUVM5N4scqGYStJ-t_ygVK3hvrYb/exec" +
-                "?q=" + URLEncoder.encode(text, "UTF-8") +
-                "&target=" + languageTo +
-                "&source=" + languageFrom;
-        URL url = new URL(urlStr);
-        StringBuilder response = new StringBuilder();
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
-        con.setRequestProperty("User-Agent", "Mozilla/5.0");
-        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-        String inputLine;
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
-        }
-        in.close();
-        return response.toString();
+    private static String translate(String languageFrom, String languageTo, String text) {
+        Translate trans = new Translate(languageFrom, languageTo, text);
+        return trans.translate();
     }
 }
