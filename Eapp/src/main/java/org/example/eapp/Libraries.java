@@ -147,6 +147,7 @@ public class Libraries implements Initializable {
         });
         mainPage.setOnAction(e -> {
             mediaPlayer.stop();
+            savedPosition = Duration.ZERO;
             setAllButtonInvisible(true);
             webView.setVisible(false);
         });
