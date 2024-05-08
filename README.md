@@ -81,6 +81,8 @@ Một phiên bản của thể loại game vượt chướng ngại vật. Ngư�
 
 ![image](https://github.com/minh071289/Grasshopper/assets/146638068/f295c73d-3b32-44aa-b967-a5bcab8f3a65)
 
+**VideoDemo:** [https://drive.google.com/file/d/1jui7Zh7rFP_52BmkRn85HssH7T6jwv72/view?usp=sharing](url)
+
 ## Future Improvements
 
 - Thêm cơ sở dữ liệu người dùng, thanh cài đặt.
